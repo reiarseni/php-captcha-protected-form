@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMEI Number Check</title>
+    <link rel="stylesheet" href="assets/styles.css?ggd">
+</head>
+<body>
+
+    <header class="hero">
+        <nav class="nav container">
+            <h2 class="nav__logo">Your team </h2>
+
+            <ul class="nav__list">
+                <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">About</a></li>
+                <li class="nav__item"><a href="#" class="nav__link">Contact</a></li>
+            </ul>
+
+            <figure class="nav__menu">
+                <img src="assets/images/menu.svg" class="nav__icon">
+            </figure>
+        </nav>
+
+        <section class="hero__main container">
+
+		   <div class="hero__texts">
+                <h1 class="hero__title">IMEI Number Check</h1>
+                <p class="hero__subtitle">Check IMEI/SN find out all Info about your Device, including Blacklist, SimLock, Model, Warranty for FREE.All Devices supported, including Apple, iPhone.</p>
+                
+				
+					<section class='login' id='login'>
+						  <div class='form'>
+							<form>
+
+								<input type="text" placeholder='Imei / Serial' class='text' id='serial' required>
+								
+								
+								<div class="wrapper">
+								  <div class="five">
+									<img src="core/captcha_image.php" class="img__captcha" style="margin-top: 5px; margin-left: 2px;" id="captcha_img" />
+								  </div>
+								  <div class="six">
+                                    <a href="#" class='hero__cta_refresh' id='btn_captcha_refresh' title="Click to refresh image">&#8635;</a>
+								  </div>
+								</div>
+								
+								<input type="text" placeholder='Enter captcha' class='captcha' id='captcha_num' required>
+								 <br>
+
+								<a href="#" class='hero__cta' id='btn_form_submit'>Check</a>
+
+							</form>
+						  </div>
+					</section>
+										
+                    <p class="hero__subtitle">Dial *#06# to find your Phone's IMEI Number or find it in your phone's settings.</p>
+
+            </div>
+
+        </section>
+
+        <div style="height: 150px; overflow: hidden;" class="hero__waves" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.99 C262.08,217.40 378.89,-120.09 500.00,49.99 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path></svg></div>
+    
+    </header>
+
+    <section class="modal ">
+        <div class="modal__container">
+            <!--  <img src="images/modal.svg" class="modal__img"> -->
+            <h2 class="modal__title">Check results:</h2>
+            <p class="modal__paragraph" id="modal_body"></p>
+            <a href="#" class="modal__close">Close</a>
+        </div>
+    </section>
+
+    <script src="assets/script.js"></script>
+
+</body>
+</html>
