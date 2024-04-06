@@ -58,10 +58,25 @@ function getDataFromApi($serial){
 	//Make iFreeiCloud Api call with your credentials
 	//...
 	
-	$cleaned_response = "Model: iPhone 7 Plus " .  "<br />";
-	$cleaned_response .= "IMEI: $serial" . "<br />";
-	$cleaned_response .= "Find My iPhone: <span style='color: green; white-space: pre; font-weight: bold;'>OFF</span>" .  "<br />";
-
+	$myCheck["service"] = 238;
+	$myCheck["imei"] = $serial;
+	$myCheck["key"] = "AAA-BBB-CCC-DDD-EEE-FFF-GGG-HHH";
+	$ch = curl_init("https://api.ifreeicloud.co.uk");
+	curl_setopt($ch, CURLOPT_POSTFIELDS, $myCheck);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+	curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 60);
+	curl_setopt($ch, CURLOPT_TIMEOUT, 60);
+	$myResult = json_decode(curl_exec($ch));
+	$httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+	curl_close($ch);
+	if($httpcode != 200) {
+		$cleaned_response = "<hr><pre>Error: HTTP Code ".$httpcode." </pre><hr>";
+	} elseif($myResult->success !== true) {
+		$cleaned_response = "<hr><pre>Error: ".$myResult->error." </pre><hr>";
+	} else {
+		$cleaned_response = $myResult->response;
+	}
+	
     return $cleaned_response; 
 }
              

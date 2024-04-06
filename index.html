@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IMEI Number Check</title>
-    <link rel="stylesheet" href="assets/styles.css?ggd">
+    <link rel="stylesheet" href="assets/styles.css?v=1.0">
 </head>
 <body>
 
@@ -30,7 +30,6 @@
                 <h1 class="hero__title">IMEI Number Check</h1>
                 <p class="hero__subtitle">Check IMEI/SN find out all Info about your Device, including Blacklist, SimLock, Model, Warranty for FREE.All Devices supported, including Apple, iPhone.</p>
                 
-				
 					<section class='login' id='login'>
 						  <div class='form'>
 							<form>
@@ -48,9 +47,13 @@
 								</div>
 								
 								<input type="text" placeholder='Enter captcha' class='captcha' id='captcha_num' required>
-								 <br>
+								<br>
 
 								<a href="#" class='hero__cta' id='btn_form_submit'>Check</a>
+
+                                <div class="wrapper">
+                                    <div class="loader" id="loader"></div>
+                                </div>
 
 							</form>
 						  </div>
@@ -68,14 +71,15 @@
 
     <section class="modal ">
         <div class="modal__container">
-            <!--  <img src="images/modal.svg" class="modal__img"> -->
-            <h2 class="modal__title">Check results:</h2>
-            <p class="modal__paragraph" id="modal_body"></p>
-            <a href="#" class="modal__close">Close</a>
+
+            <span class="close">&times;</span>
+
+            <div id="modal_body"></div>
+            
         </div>
     </section>
 
-    <script src="assets/script.js"></script>
+    <script src="assets/script.js?v=1.0"></script>
 
 </body>
 </html>
